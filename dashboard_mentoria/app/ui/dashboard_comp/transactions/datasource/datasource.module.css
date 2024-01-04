@@ -1,0 +1,30 @@
+.user {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.userImage {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.status {
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.pending {
+  background-color: rgb(126, 113, 69);
+}
+
+.canceled {
+  background-color: rgb(126, 69, 69);
+}
+
+.done {
+  background-color: rgb(78, 126, 69);
+}
+

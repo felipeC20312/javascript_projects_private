@@ -1,8 +1,17 @@
 :root {
   --bg: #1e1f26;
   --bgSoft: #22222e;
-  --text: #ffffff;
-  --textSoft: #d1d1d1;
+  --bgSofter:#3a3a4b;
+  --text: white;
+  --textSoft: #8d8d8d;
+  --green: #4e7e45;
+  --greenSoft: #68ca2f;
+  --red: #7e4545;
+  --redSoft: #ca2f2f;
+  --yellow: #7e7145;
+  --yellowSoft: #caa62f;
+  --blue: #454e7e;
+  --blueSoft: #1e41dd;
 }
 
 * {

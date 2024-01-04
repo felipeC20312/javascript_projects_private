@@ -1,0 +1,33 @@
+.container {
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addButton {
+  color: var(--text);
+  background-color: var(--blue);
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.table td {
+  padding: 10px;
+  text-align: center;
+  justify-content: center;
+}

@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button {
+  color: var(--text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  background-color: var(--bgSofter);
+}
+
+.previus {
+  background-color: var(--blue);
+}
+
+.next {
+  background-color: var(--blue);
+}

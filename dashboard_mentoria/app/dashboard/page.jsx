@@ -1,27 +1,26 @@
-import styles from "../ui/dashboard/dashboard.module.css"
+import Card from "../ui/dashboard_comp/card/card";
+import Chart from "../ui/dashboard_comp/chart/chart";
+import styles from "../ui/dashboard_comp/dashboard.module.css"
+import Rigthbar from "../ui/dashboard_comp/rigthbar/rigthbar";
+import Transactions from "../ui/dashboard_comp/transactions/transactions";
 
-import Transactions from "../ui/dashboard/transactions/transactions"
-import Rigthbar from "../ui/dashboard/rigthbar/rigthbar"
-import Chart from "../ui/dashboard/chart/chart"
-import Card from "../ui/dashboard/card/card"
-
-const DashboardPage = () => {
-    return (
-        <div className={styles.wrapper}>
-            <div className={styles.main}>
-                <div className={styles.cards}>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                </div>
-                <Transactions/>
-                <Chart/>
-            </div>
-            <div className={styles.side}>
-                <Rigthbar/>
-            </div>
+const Dashboard = () => {
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.main}>
+        <div className={styles.card}>
+          <Card status="Positive"/>
+          <Card status="Positive"/>
+          <Card status="Positive"/>
         </div>
-    )
+        <Transactions />
+        <Chart />
+      </div>
+      <div className={styles.side}>
+        <Rigthbar /> 
+      </div>
+    </div>
+  )
 }
 
-export default DashboardPage;
+export default Dashboard;

@@ -1,0 +1,59 @@
+.noAvaliable {
+  background-color: var(--bgSofter);
+}
+
+.avaliable {
+  background-color: var(--green);
+}
+
+.user{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.userImage {
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.description {
+  max-width: 400px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.status {
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  color: var(--text);
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.buttons {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px;
+  border-radius: 5px;
+  color: var(--text);
+  border: none;
+  width: 70px;
+  cursor: pointer;
+}
+
+.view {
+  background-color: var(--green);
+}
+
+.delete {
+  background-color: var(--red);
+}
