@@ -3,7 +3,7 @@ import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q, page) => {
   const regex = new RegExp(q, "i");
-  const ITEM_PER_PAGE = 5;
+  const ITEM_PER_PAGE = 10;
 
   try {
     connectToDB();
@@ -18,9 +18,21 @@ export const fetchUsers = async (q, page) => {
   }
 };
 
+export const fetchUser = async (id) => {
+
+  try {
+    connectToDB();
+    const user = await User.findById(id);
+    return user;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error: Failed to fetch user!");
+  }
+};
+
 export const fetchProducts = async (q, page) => {
   const regex = new RegExp(q, "i");
-  const ITEM_PER_PAGE = 5;
+  const ITEM_PER_PAGE = 10;
 
   try {
     connectToDB();
@@ -32,5 +44,17 @@ export const fetchProducts = async (q, page) => {
   } catch (error) {
     console.log(error);
     throw new Error("Error: Failed to fetch products!");
+  }
+};
+
+export const fetchProduct = async (id) => {
+
+  try {
+    connectToDB();
+    const product = await Products.findById(id);
+    return product;
+  } catch (error) {
+    console.log(error);
+    throw new Error("Error: Failed to fetch product!");
   }
 };

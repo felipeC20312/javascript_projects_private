@@ -52,3 +52,14 @@
   margin-top: 10px;
   border: none;
 }
+
+.form button {
+  margin-top: 20px;
+  padding: 20px;
+  width: 100%;
+  border-radius: 5px;
+  background-color: var(--blue);
+  color: var(--text);
+  border: none;
+  cursor: pointer;
+}

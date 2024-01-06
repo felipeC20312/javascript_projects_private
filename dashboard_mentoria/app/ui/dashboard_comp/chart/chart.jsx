@@ -61,8 +61,8 @@ const Chart = () => {
           <YAxis />
           <Tooltip contentStyle={{background:"#1e1f26", border:"none"}}/>
           <Legend />
-          <Line type="monotone" dataKey="visit" stroke="#ca2f2f" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="click" stroke="#68ca2f" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="visit" stroke="#8d8d8d" strokeDasharray="5 5" />
+          <Line type="monotone" dataKey="click" stroke="#8d8d8d" strokeDasharray="5 5" />
         </LineChart>
       </ResponsiveContainer>
     </div>

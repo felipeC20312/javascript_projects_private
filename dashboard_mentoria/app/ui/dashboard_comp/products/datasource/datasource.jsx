@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './datasource.module.css';
 import Image from 'next/image';
+import { deleteProcutc } from '@/app/lib/actions';
 
 const DataSource = ({ product }) => {
 
@@ -39,9 +40,10 @@ const DataSource = ({ product }) => {
           <Link href={`/dashboard/products/${product.id}`}>
             <button className={`${styles.button} ${styles.view}`}>View</button>
           </Link>
-          <Link href="/">
+          <form action={deleteProcutc}>
+            <input type="hidden" name="id" value={product.id} />
             <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-          </Link>
+          </form>
         </div>
       </td>
     </>
