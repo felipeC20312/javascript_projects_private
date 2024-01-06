@@ -1,10 +1,16 @@
+import { fetchUsers } from "@/app/lib/data";
 import Pagination from "@/app/ui/dashboard_comp/pagination/pagination";
 import Search from "@/app/ui/dashboard_comp/search/search";
 import DataSource from "@/app/ui/dashboard_comp/users/datasource/datasource";
 import styles from "@/app/ui/dashboard_comp/users/users.module.css"
 import Link from "next/link";
 
-const UsersPage = () => {
+const UsersPage = async ({searchParams}) => {
+
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const {count, users} = await fetchUsers(q, page);
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
@@ -25,13 +31,16 @@ const UsersPage = () => {
           </tr>
         </thead>
         <tbody>
-            <DataSource/>
-            <DataSource/>
-            <DataSource/>
-            <DataSource/>
+            {users.map((user) => (
+              <tr key={user.id}>
+                <DataSource
+                  user={user}
+                />
+              </tr>
+            ))}
         </tbody>
       </table>
-      <Pagination/>
+      <Pagination count={count}/>
     </div>
   )
 }

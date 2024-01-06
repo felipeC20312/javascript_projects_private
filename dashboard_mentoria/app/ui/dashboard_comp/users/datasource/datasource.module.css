@@ -1,12 +1,12 @@
 .user{
   display: flex;
-  gap: 10px;
+  gap: 20px;
   align-items: center;
   justify-content: center;
 }
 
 .userImage {
-  object-fit: cover;
+  object-fit:cover;
   border-radius: 50%;
 }
 
@@ -23,10 +23,6 @@
 
 .inactive {
   background-color: var(--red);
-}
-
-.default {
-  background-color: var(--yellow);
 }
 
 .buttons {

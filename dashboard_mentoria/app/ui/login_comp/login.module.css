@@ -1,0 +1,48 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  width: max-content;
+  background-color: var(--bgSoft);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.form h1,
+.form h3 {
+  color: var(--textSoft);
+}
+
+.form input {
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--text);
+  border-radius: 5px;
+  border: none;
+  width: 350px;
+}
+
+.form button {
+  background-color: var(--blue);
+  border: none;
+  color: var(--textSoft);
+  padding: 20px;
+  border-radius: 5px;
+}

@@ -51,6 +51,7 @@
   border: none;
   width: 100%;
   color: var(--text);
+  cursor: pointer;
 }
 
 .logoutButton:hover {

@@ -1,16 +1,22 @@
-import DataSource from "@/app/ui/dashboard_comp/products/datasource/datasource";
-import styles from "../../ui/dashboard_comp/products/products.module.css"
+import { fetchProducts } from "@/app/lib/data";
 import Pagination from "@/app/ui/dashboard_comp/pagination/pagination";
 import Search from "@/app/ui/dashboard_comp/search/search";
+import DataSource from "@/app/ui/dashboard_comp/products/datasource/datasource";
+import styles from "../../ui/dashboard_comp/products/products.module.css"
 import Link from "next/link";
 
-const ProductsPage = () => {
+const ProductsPage = async ({searchParams}) => {
+
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || 1;
+  const {count, products} = await fetchProducts(q, page);
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <Search placeholder="Search for a product..."/>
         <Link href="/dashboard/products/addproduct">
-          <button className={styles.addButton}>Add User</button>
+          <button className={styles.addButton}>Add Product</button>
         </Link>
       </div>
       <table className={styles.table}>
@@ -25,13 +31,16 @@ const ProductsPage = () => {
           </tr>
         </thead>
         <tbody>
-            <DataSource stock ={10}/>
-            <DataSource/>
-            <DataSource stock={25}/>
-            <DataSource/>
+            {products.map((product) => (
+              <tr key={product.id}>
+                <DataSource
+                  product={product}
+                />
+              </tr>
+            ))}
         </tbody>
       </table>
-      <Pagination/>
+      <Pagination count={count}/>
     </div>
   )
 }
