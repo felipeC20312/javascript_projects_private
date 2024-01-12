@@ -8,7 +8,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol:"https",
-        hostname:"**"
+        hostname:"**",
       },
     ],
   }

@@ -6,12 +6,13 @@
   --textSoft: #8d8d8d;
   --green: #4e7e45;
   --greenSoft: #68ca2f;
-  --red: #7e4545;
+  --red: #a13838;
   --redSoft: #ca2f2f;
   --yellow: #7e7145;
   --yellowSoft: #caa62f;
   --blue: #454e7e;
-  --blueSoft: #1e41dd;
+  --blueSoft: #8483cb;
+  --blueSofter: #80809e;
 }
 
 * {

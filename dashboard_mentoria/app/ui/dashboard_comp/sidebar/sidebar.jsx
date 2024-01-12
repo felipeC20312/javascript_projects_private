@@ -14,7 +14,6 @@ import {
   MdPeople,
   MdLogout,
   MdWork,
-
 } from "react-icons/md";
 
 const menuItens = [
@@ -29,7 +28,7 @@ const menuItens = [
       {
         title: "User",
         path: "/dashboard/users",
-        icon: <MdSupervisedUserCircle />
+        icon: <MdSupervisedUserCircle />,
       },
       {
         title: "Products",
@@ -81,39 +80,51 @@ const menuItens = [
 ];
 
 const Sidebar = async () => {
-
-  const {user} = await auth();
+  const { user } = await auth();
+  const session = await auth();
+  console.log(session);
 
   return (
     <div className={styles.container}>
       <div className={styles.user}>
-        <Image className={styles.userImage} src={user.userImg || "/imgs/noavatar.png"} alt="" width={50} height={50}/>
+        <Image
+          className={styles.userImage}
+          src={user.userImg || "/imgs/noavatar.png"}
+          width={50}
+          height={50}
+        />
         <div className={styles.userDetail}>
           <span className={styles.username}>{user.username}</span>
-          <span className={styles.userTitle}>{user.isAdmin? "Admin" : "Client"}</span>
+          <span className={styles.userTitle}>
+            {user.isAdmin ? "Admin" : "Client"}
+          </span>
         </div>
       </div>
+
       <ul className={styles.list}>
-        {menuItens.map(cat=>(
+        {menuItens.map((cat) => (
           <li key={cat.title}>
             <span className={styles.cat}>{cat.title}</span>
             {cat.list.map((item) => (
-              <MenuLink item={item} key={item.title}/>
+              <MenuLink item={item} key={item.title} />
             ))}
           </li>
         ))}
       </ul>
-      <form action={async () => {
-        "use server"
-        await signOut();
-      }}>
+
+      <form
+        action={async () => {
+          "use server";
+          await signOut();
+        }}
+      >
         <button className={styles.logoutButton}>
           <MdLogout />
           Logout
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
 export default Sidebar;

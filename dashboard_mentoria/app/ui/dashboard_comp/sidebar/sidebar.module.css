@@ -50,10 +50,14 @@
   background-color: transparent;
   border: none;
   width: 100%;
-  color: var(--text);
+  color: var(--red);
   cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 .logoutButton:hover {
-  background-color: var(--bgSofter);
+  color: var(--text);
+  background-color: var(--red);
 }

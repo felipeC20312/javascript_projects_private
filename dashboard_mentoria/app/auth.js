@@ -9,13 +9,13 @@ const login = async (credentials) => {
   try {
     connectToDB();
     const user = await User.findOne({ username: credentials.username });
-    if (!user) throw new Error("Wrong credentials");
-
     const isPasswordCorrect = await bcrypt.compare(
       credentials.password,
       user.password
     );
-    if (!isPasswordCorrect) throw new Error("Wrong credentials");
+
+    if (!user) throw new Error("Usuario invalido");
+    if (!isPasswordCorrect) throw new Error("Senha incorreta");
 
     return user;
   } catch (error) {
@@ -39,19 +39,19 @@ export const { signIn, signOut, auth } = NextAuth({
     }),
   ],
   callbacks: {
-    async jwt({token, user}){
-      if(user){
-        token.username = user.username
-        token.img = user.userImg
+    async jwt({ token, user }) {
+      if (user) {
+        token.username = user.username;
+        token.img = user.userImg;
       }
       return token;
     },
-    async session({session, token}){
-      if(token){
-        session.user.username = token.username
-        session.user.img = token.userImg
+    async session({ session, token }) {
+      if (token) {
+        session.user.username = token.username;
+        session.user.userImg = token.img;
       }
       return session;
     },
-  }
+  },
 });

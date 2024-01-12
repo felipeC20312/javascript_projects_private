@@ -1,0 +1,67 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 25px;
+  height: fit-content;
+}
+
+.form input {
+  background-color: transparent;
+  color: var(--text);
+  border: none;
+  width: 100%;
+  font-size: 18px;
+}
+
+.form input:focus {
+  outline: none;
+}
+
+.form input:-webkit-autofill,
+.form input:-webkit-autofill:hover,
+.form input:-webkit-autofill:focus {
+  -webkit-text-fill-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.form button {
+  background-color: var(--blueSoft);
+  border: none;
+  color: var(--text);
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 18px;
+}
+
+.text {
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg);
+  border-radius: 5px;
+  padding: 20px;
+  gap: 20px;
+  align-self: flex-start;
+  width: 350px;
+}
+
+.inputContainer:focus-within {
+  box-shadow: 0 0 0 2px var(--blueSoft);
+}
+
+.inputWithError {
+  box-shadow: 0 0 0 2px var(--redSoft);
+}
+
+.error {
+  color: var(--redSoft);
+}
