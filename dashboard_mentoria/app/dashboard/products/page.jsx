@@ -11,23 +11,25 @@ const ProductsPage = async ({searchParams}) => {
   const page = searchParams?.page || 1;
   const {count, products} = await fetchProducts(q, page);
 
+  console.log("Products");
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
-        <Search placeholder="Search for a product..."/>
+        <Search placeholder="Buscar por um Produto..."/>
         <Link href="/dashboard/products/addproduct">
-          <button className={styles.addButton}>Add Product</button>
+          <button className={styles.addButton}>Adicionar um Produto</button>
         </Link>
       </div>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Title</td>
-            <td>Description</td>
-            <td>Price</td>
-            <td>Criated At</td>
-            <td>Stock</td>
-            <td>Action</td>
+            <td>Titulo</td>
+            <td>Descrição</td>
+            <td>Preço</td>
+            <td>Data de Criação</td>
+            <td>Estoque</td>
+            <td>Ações</td>
           </tr>
         </thead>
         <tbody>

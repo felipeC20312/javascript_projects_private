@@ -45,3 +45,11 @@
   border: none;
   cursor: pointer;
 }
+
+.customSwalContainer {
+  background-color: #22222e;
+  color: #ffffff;
+  font-size: 1.2em;
+  padding: 20px;
+  border-radius: 5px;
+}

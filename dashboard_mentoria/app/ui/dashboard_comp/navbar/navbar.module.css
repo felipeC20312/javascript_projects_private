@@ -35,7 +35,21 @@
   outline: none;
 }
 
+.input:hover {
+  cursor: not-allowed;
+}
+
 .icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icons:hover {
+  cursor: not-allowed;
+}
+
+.backButton {
+  align-items: center;
   display: flex;
   gap: 20px;
 }

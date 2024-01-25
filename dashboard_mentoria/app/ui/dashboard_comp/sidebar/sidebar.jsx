@@ -18,7 +18,7 @@ import {
 
 const menuItens = [
   {
-    title: "Pages",
+    title: "Páginas",
     list: [
       {
         title: "Dashboard",
@@ -26,53 +26,53 @@ const menuItens = [
         icon: <MdDashboard />,
       },
       {
-        title: "User",
+        title: "Usuários",
         path: "/dashboard/users",
         icon: <MdSupervisedUserCircle />,
       },
       {
-        title: "Products",
+        title: "Produtos",
         path: "/dashboard/products",
         icon: <MdShoppingBag />,
       },
       {
-        title: "Transactions",
+        title: "Transações",
         path: "/dashboard/transactions",
         icon: <MdAttachMoney />,
       },
     ],
   },
   {
-    title: "Analitics",
+    title: "Análises",
     list: [
       {
-        title: "Reveanue",
+        title: "Renda",
         path: "/dashboard/revenue",
         icon: <MdWork />,
       },
       {
-        title: "Reports",
-        path: "/dashboard/reports",
+        title: "Relatórios",
+        path: "/dashboard/reports_page",
         icon: <MdAnalytics />,
       },
       {
-        title: "Teams",
+        title: "Times",
         path: "/dashboard/teams",
         icon: <MdPeople />,
       },
     ],
   },
   {
-    title: "User",
+    title: "Usuário",
     list: [
       {
-        title: "Settings",
-        path: "/dashboard/settings",
+        title: "Configurações",
+        path: "/dashboard/settings_page",
         icon: <MdOutlineSettings />,
       },
       {
-        title: "Help",
-        path: "/dashboard/settings",
+        title: "Ajuda",
+        path: "/dashboard/help",
         icon: <MdHelpCenter />,
       },
     ],
@@ -81,8 +81,6 @@ const menuItens = [
 
 const Sidebar = async () => {
   const { user } = await auth();
-  const session = await auth();
-  console.log(session);
 
   return (
     <div className={styles.container}>
@@ -96,7 +94,7 @@ const Sidebar = async () => {
         <div className={styles.userDetail}>
           <span className={styles.username}>{user.username}</span>
           <span className={styles.userTitle}>
-            {user.isAdmin ? "Admin" : "Client"}
+            {user.isAdmin ? "Administrador" : "Cliente"}
           </span>
         </div>
       </div>

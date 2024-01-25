@@ -5,37 +5,37 @@ import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } f
 
 const data =  [
   {
-    name: "Sun",
+    name: "Dom.",
     visit: 5000,
     click: 3400,
   },
   {
-    name: "Mon",
+    name: "Seg.",
     visit: 4000,
     click: 2400,
   },
   {
-    name: "Tue",
+    name: "Ter.",
     visit: 2000,
     click: 3800,
   },
   {
-    name: "Wed",
+    name: "Qua.",
     visit: 2780,
     click: 3908,
   },
   {
-    name: "Thu",
+    name: "Qui.",
     visit: 1890,
     click: 4800,
   },
   {
-    name: "Fri",
+    name: "Sex.",
     visit: 2390,
     click: 3800,
   },
   {
-    name: "Sat",
+    name: "Sáb.",
     visit: 3490,
     click: 4300,
   },
@@ -44,7 +44,7 @@ const data =  [
 const Chart = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Weekly Recap</h2>
+      <h2 className={styles.title}>Revisão da Semana</h2>
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}

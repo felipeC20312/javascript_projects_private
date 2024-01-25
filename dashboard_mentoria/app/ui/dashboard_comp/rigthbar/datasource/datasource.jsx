@@ -21,10 +21,10 @@ const DataSource = ({
   let buttonText, buttonIcon;
 
   if (ico === 0){
-    buttonText = "Watch now";
+    buttonText = "Assita Agora";
     buttonIcon = <MdPlayCircleFilled/>
   } else if (ico === 1){
-    buttonText = "Read more";
+    buttonText = "Leia Mais";
     buttonIcon = <MdReadMore/>
   } else {
     buttonText = "Default";

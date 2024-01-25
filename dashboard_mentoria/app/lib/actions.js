@@ -74,8 +74,7 @@ export const updateUser = async (formData) => {
 };
 
 // --> DELETE USER <--
-export const deleteUser = async (formData) => {
-  const { id } = Object.fromEntries(formData);
+export const deleteUser = async (id) => {
 
   try {
     connectToDB();
@@ -147,8 +146,7 @@ export const updateProcuct = async (formData) => {
 };
 
 // --> DELETE PRODUCT <--
-export const deleteProcutc = async (formData) => {
-  const { id } = Object.fromEntries(formData);
+export const deleteProcutc = async (id) => {
 
   try {
     connectToDB();

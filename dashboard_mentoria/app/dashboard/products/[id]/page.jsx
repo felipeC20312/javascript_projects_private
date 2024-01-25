@@ -23,25 +23,25 @@ const ProductViewPage = async ({ params }) => {
         <form action={updateProcuct} className={styles.form}>
           <input type="hidden" name="id" value={product.id}/>
 
-          <label htmlFor="">Name</label>
+          <label htmlFor="">Nome</label>
           <input type="text" placeholder={product.productname} name="productname" />
 
-          <label htmlFor="">Criated At</label>
+          <label htmlFor="">Data da Criação</label>
           <input type="text" placeholder={product.criatedAt} name="criatedAt" />
 
-          <label htmlFor="">Price</label>
+          <label htmlFor="">Preço</label>
           <input type="text" placeholder={product.price} name="price" />
 
-          <label htmlFor="">Stock</label>
+          <label htmlFor="">Estoque</label>
           <input type="number" placeholder={product.stock} name="stock"/>
           
-          <label htmlFor="">Color</label>
+          <label htmlFor="">Cor do Produto</label>
           <input type="text" placeholder={product.color} name="color" />
 
-          <label htmlFor="">Size</label>
+          <label htmlFor="">Tamanho</label>
           <input type="number" placeholder={product.size} name="size"/>
 
-          <label htmlFor="">Description</label>
+          <label htmlFor="">Descrição</label>
           <textarea
             type="text"
             name="description"
@@ -49,15 +49,15 @@ const ProductViewPage = async ({ params }) => {
             placeholder={product.description}
           />
 
-          <label htmlFor="">Category</label>
+          <label htmlFor="">Categoria</label>
           <select name="category" id="category">
-            <option value="kitchen">Kitchen</option>
-            <option value="phone">Phone</option>
-            <option value="computer">Computer</option>
-            <option value="gaming">Gaming</option>
+            <option value="kitchen">Cozinha</option>
+            <option value="phone">Telefones</option>
+            <option value="computer">Computadores</option>
+            <option value="gaming">Gamer</option>
           </select>
 
-          <button className={`${styles.button} ${styles.delete}`}>Update</button>
+          <button className={`${styles.button} ${styles.delete}`}>Salvar</button>
         </form>
       </div>
     </div>

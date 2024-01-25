@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "./datasource.module.css";
 import Image from "next/image";
-import { deleteUser } from "@/app/lib/actions";
+import Form from "../form/form";
 
 const DataSource = ({ user }) => {
   
@@ -11,6 +11,17 @@ const DataSource = ({ user }) => {
   const userImg = user.userImg || "/imgs/noavatar.png";
   const isAdmin = user.isAdmin;
   const isActive = user.isActive;
+
+  const getSimpleUser = (user) => {
+    return {
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      isActive: user.isActive,
+      userImg: user.userImg,
+    };
+  };
 
   return (
     <>
@@ -28,14 +39,14 @@ const DataSource = ({ user }) => {
       </td>
       <td>{email}</td>
       <td>{createdAt}</td>
-      <td>{isAdmin ? "Admin" : "Client"}</td>
+      <td>{isAdmin ? "Administrador" : "Cliente"}</td>
       <td>
         {isActive === true ? (
-          <span className={`${styles.status} ${styles.active}`}>Active</span>
+          <span className={`${styles.status} ${styles.active}`}>Ativo</span>
         ) : (
           isActive === false && (
             <span className={`${styles.status} ${styles.inactive}`}>
-              Inactive
+              Inativo
             </span>
           )
         )}
@@ -43,12 +54,9 @@ const DataSource = ({ user }) => {
       <td>
         <div className={styles.buttons}>
           <Link href={`/dashboard/users/${user.id}`}>
-            <button className={`${styles.button} ${styles.view}`}>View</button>
+            <button className={`${styles.button} ${styles.view}`}>Detalhar</button>
           </Link>
-          <form action={deleteUser}>
-            <input type="hidden" name="id" value={user.id} />
-            <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-          </form>
+          <Form user={getSimpleUser(user)} id={user.id}/>
         </div>
       </td>
     </>

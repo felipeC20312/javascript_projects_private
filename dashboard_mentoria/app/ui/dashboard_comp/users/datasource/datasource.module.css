@@ -1,8 +1,8 @@
 .user{
   display: flex;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
-  justify-content: center;
+  padding-left: 40px;
 }
 
 .userImage {
@@ -43,8 +43,4 @@
 
 .view {
   background-color: var(--green);
-}
-
-.delete {
-  background-color: var(--red);
 }

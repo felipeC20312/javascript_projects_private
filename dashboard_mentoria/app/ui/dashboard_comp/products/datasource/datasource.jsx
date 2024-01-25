@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from './datasource.module.css';
 import Image from 'next/image';
-import { deleteProcutc } from '@/app/lib/actions';
+import Form from '../form/form';
 
 const DataSource = ({ product }) => {
 
@@ -11,6 +11,17 @@ const DataSource = ({ product }) => {
   const stock = product.stock;
   const createdAt = product.createdAt?.toString().slice(4,16) || '00/00/0000';
   const productImg = product.productImg || "/imgs/noproduct1.png";
+
+  const getSimpleProduct = (product) => {
+    return {
+      name: product.productname,
+      description: product.description,
+      price: product.price,
+      stock: product.stock,
+      createdAt: product.createdAt,
+      productImg: product.productImg,
+    };
+  };
 
   const statusContent = stock;
   let _status = styles.noAvaliable;
@@ -38,12 +49,9 @@ const DataSource = ({ product }) => {
       <td>
         <div className={styles.buttons}>
           <Link href={`/dashboard/products/${product.id}`}>
-            <button className={`${styles.button} ${styles.view}`}>View</button>
+            <button className={`${styles.button} ${styles.view}`}>Detalhar</button>
           </Link>
-          <form action={deleteProcutc}>
-            <input type="hidden" name="id" value={product.id} />
-            <button className={`${styles.button} ${styles.delete}`}>Delete</button>
-          </form>
+          <Form product={getSimpleProduct(product)} id={product.id}/>
         </div>
       </td>
     </>

@@ -5,21 +5,21 @@ import DataSource from './datasource/datasource';
 const Transactions = () => {
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>Latest Transactions</h2>
+      <h2 className={styles.title}>Ultimas Transações</h2>
       <table className={styles.table}>
         <thead>
           <tr>
-            <td>Name</td>
+            <td>Responsável</td>
             <td>Status</td>
-            <td>Date</td>
-            <td>Amount</td>
+            <td>Data de Realização</td>
+            <td>Total da venda</td>
           </tr>
         </thead>
         <tbody>
-          <DataSource status = "Pending"/>
-          <DataSource status = "Canceled"/>
-          <DataSource status = "Done"/>
-          <DataSource status = "Done"/>
+          <DataSource status = "Pendente"/>
+          <DataSource status = "Cancelado"/>
+          <DataSource status = "Concluido"/>
+          <DataSource status = "Concluido"/>
         </tbody>
       </table>
     </div>

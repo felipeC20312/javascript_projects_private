@@ -29,14 +29,14 @@ const Pagination = ({ count }) => {
         disabled={!hasPrev}
         onClick={() => handleChangePage("prev")}
       >
-        Previus
+        Anterior
       </button>
       <button
         className={`${styles.button} ${styles.next}`}
         disabled={!hasNext}
         onClick={() => handleChangePage("next")}
       >
-        Next
+        Próxima
       </button>
     </div>
   );
